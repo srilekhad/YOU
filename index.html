@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>House Rental Website</title>
+  <style>
+    /* CSS Styles */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #007bff;
+      color: #fff;
+      padding: 10px;
+      text-align: center;
+    }
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+    input[type="text"], select {
+      width: 100%;
+      padding: 10px;
+      margin: 5px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>House Rental Website</h1>
+  </header>
+  <div class="container">
+    <h2>Find Your Dream Home</h2>
+    <form id="houseForm" onsubmit="return validateForm()">
+      <label for="location">Location:</label>
+      <input type="text" id="location" name="location" required>
+      <label for="budget">Budget:</label>
+      <input type="text" id="budget" name="budget" required>
+      <label for="bedrooms">Bedrooms:</label>
+      <select id="bedrooms" name="bedrooms">
+        <option value="1">1 Bedroom</option>
+        <option value="2">2 Bedrooms</option>
+        <option value="3">3 Bedrooms</option>
+      </select>
+      <label>Features:</label>
+      <input type="checkbox" id="pool" name="pool">
+      <label for="pool">Pool</label>
+      <input type="checkbox" id="garden" name="garden">
+      <label for="garden">Garden</label>
+      <br>
+      <label>Preferred Contact Method:</label>
+      <input type="radio" id="contactEmail" name="contactMethod" value="email" checked>
+      <label for="contactEmail">Email</label>
+      <input type="radio" id="contactPhone" name="contactMethod" value="phone">
+      <label for="contactPhone">Phone</label>
+      <br>
+      <button type="submit">Search</button>
+    </form>
+  </div>
+  <footer>
+    <div class="container">
+      <p>1234 Main Street, City, Country</p>
+      <p>Email: info@houserentalwebsite.com</p>
+      <p>Phone: +123 456 7890</p>
+      <a href="#">Terms of Service</a> | <a href="#">Privacy Policy</a>
+    </div>
+  </footer>
+  <script>
+    // JavaScript Form Validation
+    function validateForm() {
+      var location = document.getElementById('location').value;
+      var budget = document.getElementById('budget').value;
+      if (location === '' || budget === '') {
+        alert('Please fill out all required fields.');
+        return false;
+      }
+      return true;
+    }
+  </script>
+</body>
+</html>
